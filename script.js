@@ -1,4 +1,4 @@
-let playerState = "Power";
+let playerState = "Idle";
 const dropdown = document.getElementById("animations");
 dropdown.addEventListener("change", function(e){
     playerState = e.target.value;
@@ -31,7 +31,7 @@ const animationStates = [
     },
     {
         name: "MoveR",
-        frames: 3,
+        frames: 4,
     },
     {
         name: "Attack1",
@@ -48,6 +48,14 @@ const animationStates = [
     {
         name: "MoveL",
         frames: 3,
+    },
+    {
+        name: "Idle",
+        frames: 4,
+    },
+    {
+        name: "Attack4",
+        frames: 4,
     },
 ];
 
