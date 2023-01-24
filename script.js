@@ -18,7 +18,7 @@ const spriteHeight = 200;
 
 
 let gameFrame = 0;
-const staggerFrames = 7;
+const staggerFrames = 8;
 const spriteAnimations = [];
 const animationStates = [
     {
@@ -57,6 +57,15 @@ const animationStates = [
         name: "Attack4",
         frames: 4,
     },
+    {
+        name: "Hit",
+        frames: 5,
+    },
+    {
+        name: "Attack5",
+        frames: 3,
+    },
+
 ];
 
 animationStates.forEach((state, index) => {
