@@ -1,4 +1,4 @@
-let playerState = "Idle";
+let playerState = "Kamehame";
 const dropdown = document.getElementById("animations");
 dropdown.addEventListener("change", function(e){
     playerState = e.target.value;
@@ -7,65 +7,41 @@ dropdown.addEventListener("change", function(e){
 const canvas = document.getElementById("canvas1");
 const ctx = canvas.getContext("2d");
 
-const CANVAS_WIDTH = canvas.width = 200;
-const CANVAS_HEIGHT = canvas.height = 200;
+const CANVAS_WIDTH = canvas.width = 1000;
+const CANVAS_HEIGHT = canvas.height = 300;
 
 const playerImage = new Image();
-playerImage.src = "trunk.png";
+playerImage.src = "trunk2.png";
 
-const spriteWidth = 200;
-const spriteHeight = 200;
+const spriteWidth = 750;
+const spriteHeight = 300;
 
 
 let gameFrame = 0;
-const staggerFrames = 8;
+const staggerFrames = 15;
 const spriteAnimations = [];
 const animationStates = [
     {
+        name: "Kamehame",
+        frames: 6,
+    },
+    {
         name: "Power",
+        frames: 2,
+    },
+    {
+        name: "MoveR",
+        frames: 5,
+    },
+    {
+        name: "MoveL",
         frames: 4,
     },
     {
         name: "Jump",
         frames: 6,
     },
-    {
-        name: "MoveR",
-        frames: 4,
-    },
-    {
-        name: "Attack1",
-        frames: 7,
-    },
-    {
-        name: "Attack2",
-        frames: 3,
-    },
-    {
-        name: "Attack3",
-        frames: 9,
-    },
-    {
-        name: "MoveL",
-        frames: 3,
-    },
-    {
-        name: "Idle",
-        frames: 4,
-    },
-    {
-        name: "Attack4",
-        frames: 4,
-    },
-    {
-        name: "Hit",
-        frames: 5,
-    },
-    {
-        name: "Attack5",
-        frames: 3,
-    },
-
+    
 ];
 
 animationStates.forEach((state, index) => {
@@ -79,7 +55,6 @@ animationStates.forEach((state, index) => {
     }
     spriteAnimations[state.name] = frames;
 });
-console.log(spriteAnimations);
 
 function animate() {
     ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
@@ -87,7 +62,7 @@ function animate() {
     let frameX = spriteWidth * position;
     let frameY = spriteAnimations[playerState].loc[position].y;
     //ctx.drawImage(image, sx, sy, sw, sh, dx, dy, dw, dh);
-    ctx.drawImage(playerImage, frameX, frameY, 200, 200, 0, 0, spriteWidth, spriteHeight);
+    ctx.drawImage(playerImage, frameX, frameY, 750, 300, 0, 0, spriteWidth, spriteHeight);
 
     gameFrame++;
     requestAnimationFrame(animate);
