@@ -7,7 +7,7 @@ dropdown.addEventListener("change", function(e){
 const canvas = document.getElementById("canvas1");
 const ctx = canvas.getContext("2d");
 
-const CANVAS_WIDTH = canvas.width = 1000;
+const CANVAS_WIDTH = canvas.width = 750;
 const CANVAS_HEIGHT = canvas.height = 300;
 
 const playerImage = new Image();
